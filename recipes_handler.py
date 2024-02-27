@@ -75,7 +75,6 @@ async def recipes_description(message: Message, state:FSMContext):
         recipes = await asyncio.gather(*fetch_awaitables)
         for d_meal in recipes:
             for meal in d_meal['meals']:
-                print(meal)
                 response = as_list(
                     Bold(translator.translate(meal['strMeal'], dest='ru').text),
                     f"\nРецепт:",
